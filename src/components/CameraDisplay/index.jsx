@@ -10,11 +10,11 @@ import { cameraSwitch } from "../../assets";
 
 function CameraDisplay() {
   const [displayModal, setdisplayModal] = useState(true);
-  const [facingMode, setFacingMode] = useState("user");
+  const [facingMode, setFacingMode] = useState("front");
 
   const changeFacingMode = () => {
-    if (facingMode === "user") return setFacingMode("environment");
-    setFacingMode("user");
+    if (facingMode === "front") return setFacingMode("rear");
+    setFacingMode("front");
   };
 
   const closeModal = () => {
