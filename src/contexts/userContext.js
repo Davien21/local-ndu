@@ -106,10 +106,10 @@ export function UserProvider({ children }) {
 
       const details = await getCompanyDetails();
       setPharmacyDetails(details);
-
       if (hasPharmacy) {
         const drugs = await getDrugInventory();
         setPharmacyDrugs(drugs);
+        console.log({ drugs });
         toast.success("All Drugs were retrieved successfully");
       }
 

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styles from "./hashListItem.module.css";
 
 const HashListItem = ({ status, address }) => {
-  console.log(status);
   const [isHovering, setIsHovering] = useState(false);
 
   return (

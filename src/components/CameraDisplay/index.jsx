@@ -6,9 +6,17 @@ import QrReader from "react-qr-scanner";
 import { useToastContext } from "../../contexts/toastContext";
 import { getScannedDrugDetails } from "../../services/web3Services";
 import { useLockBodyScroll } from "../../hooks";
+import { cameraSwitch } from "../../assets";
 
 function CameraDisplay() {
   const [displayModal, setdisplayModal] = useState(true);
+  const [facingMode, setFacingMode] = useState("user");
+
+  const changeFacingMode = () => {
+    if (facingMode === "user") return setFacingMode("environment");
+    setFacingMode("user");
+  };
+
   const closeModal = () => {
     setdisplayModal(false);
     setScanner(false);
@@ -52,6 +60,7 @@ function CameraDisplay() {
             <div className={`${styles.cameraOverlay}`}>
               {scanner && (
                 <QrReader
+                  facingMode={facingMode}
                   delay={500}
                   onError={(err) => {
                     console.log(err);
@@ -80,14 +89,14 @@ function CameraDisplay() {
               setScanner(false);
             }}
           />
+          <div className="mt-4 cursor-pointer" onClick={changeFacingMode}>
+            <img width="50" height="50" src={cameraSwitch} alt="" />
+          </div>
         </div>
       )}
 
       {displayModal && drugDetails && (
-        <Modal
-          data={drugDetails}
-          closeModal={() => closeModal()}
-        />
+        <Modal data={drugDetails} closeModal={() => closeModal()} />
       )}
     </div>
   );

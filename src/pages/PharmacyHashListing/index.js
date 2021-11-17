@@ -18,7 +18,6 @@ const PharmacyHashListing = () => {
 
   const [serials, setSerials] = useState(null);
   const [status, setStatus] = useState(null);
-  console.log(drug);
   useEffect(() => {
     (async () => {
       if (serials !== null) return;

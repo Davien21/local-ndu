@@ -9,6 +9,7 @@ import drug2 from "./drug-2.png";
 import mainframe from "./mainframe.png";
 import drug from "./drug.png";
 import pharmacyPic from "./pharmacy.jpg";
+import cameraSwitch from "./flip-camera.png";
 
 export {
   dude,
@@ -22,4 +23,5 @@ export {
   handWithDrug,
   drug,
   pharmacyPic,
+  cameraSwitch,
 };

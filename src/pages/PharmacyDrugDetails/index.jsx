@@ -12,9 +12,9 @@ function PharmacyDrugDetails(props) {
   const { id } = useParams();
   const { pharmacyDetails, pharmacyDrugs } = usePharmacyContext();
   const drug = pharmacyDrugs?.find((item) => item.hash === id);
-  
+
   const image = `https://ipfs.io/ipfs/${drug?.imageHash}`;
-  
+
   return (
     <DashboardLayout>
       <div
@@ -60,15 +60,15 @@ function PharmacyDrugDetails(props) {
             <div className="grid grid-cols-2 grid-rows-2">
               <div className={`${styles["detail-box"]} mb-6`}>
                 <p>Manufactured</p>
-                <p>{formatDate(drug["manufacture-date"])}</p>
+                <p>{formatDate(drug?.["manufacture-date"])}</p>
               </div>
               <div className={`${styles["detail-box"]} mb-6`}>
                 <p>Expires on</p>
-                <p>{formatDate(drug["expiry-date"])}</p>
+                <p>{formatDate(drug?.["expiry-date"])}</p>
               </div>
               <div className={`${styles["detail-box"]} mb-6`}>
                 <p>Registered packs</p>
-                <p>{drug["no-of-serials"]}</p>
+                <p>{drug?.["no-of-serials"]}</p>
               </div>
               <div className={`${styles["detail-box"]} mb-6`}>
                 <p>Registered On</p>
